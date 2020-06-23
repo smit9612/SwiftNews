@@ -16,6 +16,10 @@ extension ManagerInjected {
         return ManagerInjector.newService
     }
     
+    var imageLoader: ImageLoaderProtocol {
+        return ManagerInjector.imageLoader
+    }
+    
     var urlSession: URLSession {
         return ManagerInjector.urlSession
     }
@@ -26,6 +30,8 @@ struct ManagerInjector {
     
 
     static var newService: NewsServiceProtocol = NewsService()
+    
+    static var imageLoader: ImageLoaderProtocol = ImageLoader()
     
     static var urlSession = URLSession(configuration: URLSessionConfiguration.default)
     

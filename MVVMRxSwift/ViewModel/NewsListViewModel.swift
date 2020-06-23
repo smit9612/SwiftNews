@@ -9,6 +9,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import UIKit
 
 struct NewsListViewModel: ManagerInjected {
 
@@ -34,13 +35,31 @@ struct FeedViewModel {
 
 struct NewsViewModel {
 
-    private let child: Child
+    var child: Child
 
     init(child: Child) {
         self.child = child
     }
 
+    // TODO Unit test for 
     var displayText: String {
-        return child.data?.selftext ?? ""
+        return child.childData?.selftext ?? ""
+    }
+    
+    // TODO Unit  test for imageURL
+    var imageURL: String? {
+        guard let thumbnail = child.childData?.thumbnail, thumbnail != "self" else {
+            return nil
+        }
+        return thumbnail
+    }
+}
+
+extension UIImageView: ManagerInjected {
+    
+    func loadImage(url: URL) {
+        let _ = imageLoader.loadImage(url: url).map { [weak self] in
+            self?.image = $0
+        }
     }
 }

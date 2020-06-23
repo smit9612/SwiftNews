@@ -11,6 +11,6 @@ import Foundation
 extension Feed {
     
     var children: [Child]? {
-        return data?.children
+        return feedData?.children
     }
 }

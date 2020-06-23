@@ -9,13 +9,19 @@
 import Foundation
 
 struct Feed: ServiceCodable {
-    
+
     var kind: String?
-    var data: FeedData?
+    var feedData: FeedData?
+
+    enum CodingKeys: String, CodingKey {
+
+        case kind
+        case feedData = "data"
+    }
 }
 
 struct FeedData: ServiceCodable {
-    
+
     var modhash: String?
     var dist: Int?
     var children: [Child]?
@@ -24,16 +30,22 @@ struct FeedData: ServiceCodable {
 }
 
 struct Child: ServiceCodable {
-    
+
     var kind: String?
-    var data: ChildData?
+    var childData: ChildData?
+
+    enum CodingKeys: String, CodingKey {
+
+        case kind
+        case childData = "data"
+    }
 }
 
-struct ChildData:ServiceCodable {
+struct ChildData: ServiceCodable {
     var selftext: String?
     var authorFullName, Name: String?
+    var thumbnail: String?
     var preview: Preview?
-    
 }
 
 struct Preview: ServiceCodable {
@@ -53,5 +65,3 @@ struct ResizedIcon: ServiceCodable {
     var url: String?
     var width, height: Int?
 }
-
-

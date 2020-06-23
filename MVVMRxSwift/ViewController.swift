@@ -33,6 +33,11 @@ class ViewController: UIViewController {
         tableview.rx.items(cellIdentifier: "NewsCell", cellType: NewsCell.self)) { index, viewModel, cell in
             print(viewModel.displayText)
             cell.newsTitle.text = viewModel.displayText
+            // show loading
+            if let thumb = viewModel.imageURL  {
+                cell.heroImage?.loadImage(url: URL(string: thumb)!)
+            }
+            
         }.disposed(by: disposeBag)
     }
 }
