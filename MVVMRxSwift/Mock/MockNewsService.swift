@@ -11,24 +11,24 @@ import RxSwift
 
 final class MockNewsService: NewsServiceProtocol {
     
-    func fetchNews() -> Observable<[Child]> {
-                return Observable.create { observer -> Disposable in
-                    // If Usin Mock Data
-                    guard let path = Bundle.main.path(forResource: "mockswiftnews", ofType: "json") else {
-                        observer.onError(NSError(domain: "", code: -1, userInfo: nil))
-                        return Disposables.create()
-                    }
-                    do {
-                        let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                        guard let feed: Feed = Feed.from(data: data), let news: [Child] = feed.data?.children else {
-                            observer.onError(NSError(domain: "Error", code: -1, userInfo: nil))
-                            return Disposables.create()
-                        }
-                        observer.onNext(news)
-                    } catch {
-                        observer.onError(error)
-                    }
-                    return Disposables.create {}
+    func fetchNews() -> Observable<[Feed]> {
+        return Observable.create { observer -> Disposable in
+            // If Usin Mock Data
+            guard let path = Bundle.main.path(forResource: "mockswiftnews", ofType: "json") else {
+                observer.onError(NSError(domain: "", code: -1, userInfo: nil))
+                return Disposables.create()
+            }
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                guard let feed: Feed = Feed.from(data: data) else {
+                    observer.onError(NSError(domain: "Error", code: -1, userInfo: nil))
+                    return Disposables.create()
                 }
+                observer.onNext([feed])
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create {}
+        }
     }
 }

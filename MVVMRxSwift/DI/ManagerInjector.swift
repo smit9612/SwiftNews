@@ -16,9 +16,22 @@ extension ManagerInjected {
         return ManagerInjector.newService
     }
     
+    var urlSession: URLSession {
+        return ManagerInjector.urlSession
+    }
+    
 }
 
 struct ManagerInjector {
     
-    static var newService: NewsServiceProtocol = MockNewsService()
+
+    static var newService: NewsServiceProtocol = NewsService()
+    
+    static var urlSession = URLSession(configuration: URLSessionConfiguration.default)
+    
+    static func createURLSession(configuration: URLSessionConfiguration = URLSessionConfiguration.default, delegate: URLSessionDelegate? = nil) -> URLSession {
+        configuration.timeoutIntervalForRequest = 30
+        configuration.timeoutIntervalForResource = 30
+        return URLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
+    }
 }

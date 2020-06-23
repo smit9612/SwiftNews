@@ -23,16 +23,16 @@ class RestaurantViewModelTests: XCTestCase {
 
     func testfetchRestaurantViewModelsSuccess() {
         let disposeBag = DisposeBag()
-        ManagerInjector.restaurantService = MockResaurantService()
+        // Given a network Service sucess
+        let networkService = NetworkService()
+        networkService.setURLSession((MockURLSession(mockType: .success)))
         
-        let viewModel = RestaurantListViewModel()
-        
-
+        let viewModel = NewsListViewModel()
         let expectNormalRestaurantCellCreated = expectation(description: "restaurants contains a normal cell")
-        
-        viewModel.fetchRestaurantViewModels().subscribe(
+        // When fetchNewListView
+        viewModel.fetchNewListViewModel().subscribe(
             onNext: {
-                XCTAssertEqual($0.first?.displayText, "Mock Rest1 - european")
+                XCTAssertEqual($0.first?.displayText, "What Swift-related projects are you currently working on?")
                 expectNormalRestaurantCellCreated.fulfill()
             }
         ).disposed(by: disposeBag)

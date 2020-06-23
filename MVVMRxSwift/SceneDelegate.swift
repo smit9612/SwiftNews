@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     
     private func initializeMockServices() {
-        ManagerInjector.newService = MockNewsService()
+        //ManagerInjector.newService = MockNewsService()
     }
 
     private func environmentValue(forKey key: TestingKeyIdentifiable) -> String? {

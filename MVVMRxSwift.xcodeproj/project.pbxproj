@@ -22,8 +22,6 @@
 		107CA89C24A04CF900BA4D6B /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA89B24A04CF900BA4D6B /* StoryboardIdentifiable.swift */; };
 		107CA89E24A04EA300BA4D6B /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA89D24A04EA300BA4D6B /* Storyboard+Extension.swift */; };
 		107CA8A224A050BB00BA4D6B /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 107CA8A124A050BB00BA4D6B /* restaurants.json */; };
-		107CA8A524A0517200BA4D6B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8A424A0517200BA4D6B /* Restaurant.swift */; };
-		107CA8A824A0529C00BA4D6B /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8A724A0529C00BA4D6B /* RestaurantService.swift */; };
 		107CA8AB24A0574000BA4D6B /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8AA24A0574000BA4D6B /* NewsListViewModel.swift */; };
 		107CA8AF24A05CA600BA4D6B /* ManagerInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8AE24A05CA600BA4D6B /* ManagerInjector.swift */; };
 		107CA8B524A061A800BA4D6B /* UITestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8B324A0615F00BA4D6B /* UITestKey.swift */; };
@@ -32,31 +30,10 @@
 		107CA8C124A06A0300BA4D6B /* MockResponses in Resources */ = {isa = PBXBuildFile; fileRef = 107CA8C024A06A0300BA4D6B /* MockResponses */; };
 		1098591224A1994F003BECA7 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098591124A1994F003BECA7 /* Loggable.swift */; };
 		1098591524A1998A003BECA7 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098591424A1998A003BECA7 /* NetworkLogger.swift */; };
+		1098591824A1A568003BECA7 /* NewsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098591724A1A568003BECA7 /* NewsCellTableViewCell.swift */; };
+		1098591A24A1B848003BECA7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098591924A1B848003BECA7 /* Feed.swift */; };
+		1098591C24A1B9CB003BECA7 /* Feed+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098591B24A1B9CB003BECA7 /* Feed+Extension.swift */; };
 		10D8020124A141000021BE5A /* mockswiftnews.json in Resources */ = {isa = PBXBuildFile; fileRef = 10D8020024A141000021BE5A /* mockswiftnews.json */; };
-		10D8024824A144730021BE5A /* WhitelistStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023024A144710021BE5A /* WhitelistStatus.swift */; };
-		10D8024924A144730021BE5A /* Gildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023124A144710021BE5A /* Gildings.swift */; };
-		10D8024A24A144730021BE5A /* SubredditNamePrefixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023224A144710021BE5A /* SubredditNamePrefixed.swift */; };
-		10D8024B24A144730021BE5A /* FlairTextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023324A144710021BE5A /* FlairTextColor.swift */; };
-		10D8024C24A144730021BE5A /* MediaMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023424A144710021BE5A /* MediaMetadata.swift */; };
-		10D8024D24A144730021BE5A /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023524A144710021BE5A /* Domain.swift */; };
-		10D8024E24A144730021BE5A /* Prydssay0A651.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023624A144710021BE5A /* Prydssay0A651.swift */; };
-		10D8024F24A144730021BE5A /* ChildData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023724A144710021BE5A /* ChildData.swift */; };
-		10D8025024A144730021BE5A /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023824A144710021BE5A /* Feed.swift */; };
-		10D8025124A144730021BE5A /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023924A144710021BE5A /* Child.swift */; };
-		10D8025224A144730021BE5A /* Edited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023A24A144710021BE5A /* Edited.swift */; };
-		10D8025324A144730021BE5A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023B24A144720021BE5A /* Image.swift */; };
-		10D8025424A144730021BE5A /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023C24A144720021BE5A /* Preview.swift */; };
-		10D8025524A144730021BE5A /* ResizedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023D24A144720021BE5A /* ResizedIcon.swift */; };
-		10D8025624A144730021BE5A /* Subreddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023E24A144720021BE5A /* Subreddit.swift */; };
-		10D8025724A144730021BE5A /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023F24A144720021BE5A /* FeedData.swift */; };
-		10D8025824A144730021BE5A /* AllAwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024024A144720021BE5A /* AllAwarding.swift */; };
-		10D8025924A144730021BE5A /* SubredditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024124A144720021BE5A /* SubredditType.swift */; };
-		10D8025A24A144730021BE5A /* S.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024224A144720021BE5A /* S.swift */; };
-		10D8025B24A144730021BE5A /* FlairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024324A144720021BE5A /* FlairType.swift */; };
-		10D8025C24A144730021BE5A /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024424A144720021BE5A /* JSONSchemaSupport.swift */; };
-		10D8025D24A144730021BE5A /* The651.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024524A144720021BE5A /* The651.swift */; };
-		10D8025E24A144730021BE5A /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024624A144720021BE5A /* Kind.swift */; };
-		10D8025F24A144730021BE5A /* SubredditID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024724A144720021BE5A /* SubredditID.swift */; };
 		10D8026124A146CD0021BE5A /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8026024A146CD0021BE5A /* NewsService.swift */; };
 		10D8026324A148770021BE5A /* ServiceCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8026224A148770021BE5A /* ServiceCodable.swift */; };
 /* End PBXBuildFile section */
@@ -98,8 +75,6 @@
 		107CA89B24A04CF900BA4D6B /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 		107CA89D24A04EA300BA4D6B /* Storyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
 		107CA8A124A050BB00BA4D6B /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
-		107CA8A424A0517200BA4D6B /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		107CA8A724A0529C00BA4D6B /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
 		107CA8AA24A0574000BA4D6B /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		107CA8AE24A05CA600BA4D6B /* ManagerInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerInjector.swift; sourceTree = "<group>"; };
 		107CA8B324A0615F00BA4D6B /* UITestKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestKey.swift; sourceTree = "<group>"; };
@@ -108,31 +83,10 @@
 		107CA8C024A06A0300BA4D6B /* MockResponses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MockResponses; sourceTree = "<group>"; };
 		1098591124A1994F003BECA7 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		1098591424A1998A003BECA7 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		1098591724A1A568003BECA7 /* NewsCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellTableViewCell.swift; sourceTree = "<group>"; };
+		1098591924A1B848003BECA7 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		1098591B24A1B9CB003BECA7 /* Feed+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Feed+Extension.swift"; sourceTree = "<group>"; };
 		10D8020024A141000021BE5A /* mockswiftnews.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockswiftnews.json; sourceTree = "<group>"; };
-		10D8023024A144710021BE5A /* WhitelistStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhitelistStatus.swift; sourceTree = "<group>"; };
-		10D8023124A144710021BE5A /* Gildings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gildings.swift; sourceTree = "<group>"; };
-		10D8023224A144710021BE5A /* SubredditNamePrefixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditNamePrefixed.swift; sourceTree = "<group>"; };
-		10D8023324A144710021BE5A /* FlairTextColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlairTextColor.swift; sourceTree = "<group>"; };
-		10D8023424A144710021BE5A /* MediaMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaMetadata.swift; sourceTree = "<group>"; };
-		10D8023524A144710021BE5A /* Domain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
-		10D8023624A144710021BE5A /* Prydssay0A651.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prydssay0A651.swift; sourceTree = "<group>"; };
-		10D8023724A144710021BE5A /* ChildData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildData.swift; sourceTree = "<group>"; };
-		10D8023824A144710021BE5A /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
-		10D8023924A144710021BE5A /* Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
-		10D8023A24A144710021BE5A /* Edited.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edited.swift; sourceTree = "<group>"; };
-		10D8023B24A144720021BE5A /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		10D8023C24A144720021BE5A /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
-		10D8023D24A144720021BE5A /* ResizedIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizedIcon.swift; sourceTree = "<group>"; };
-		10D8023E24A144720021BE5A /* Subreddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subreddit.swift; sourceTree = "<group>"; };
-		10D8023F24A144720021BE5A /* FeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
-		10D8024024A144720021BE5A /* AllAwarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAwarding.swift; sourceTree = "<group>"; };
-		10D8024124A144720021BE5A /* SubredditType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditType.swift; sourceTree = "<group>"; };
-		10D8024224A144720021BE5A /* S.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S.swift; sourceTree = "<group>"; };
-		10D8024324A144720021BE5A /* FlairType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlairType.swift; sourceTree = "<group>"; };
-		10D8024424A144720021BE5A /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
-		10D8024524A144720021BE5A /* The651.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = The651.swift; sourceTree = "<group>"; };
-		10D8024624A144720021BE5A /* Kind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
-		10D8024724A144720021BE5A /* SubredditID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditID.swift; sourceTree = "<group>"; };
 		10D8026024A146CD0021BE5A /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		10D8026224A148770021BE5A /* ServiceCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +141,7 @@
 		107CA86124A03FA300BA4D6B /* MVVMRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				1098591624A1A54A003BECA7 /* View */,
 				1098591324A1997B003BECA7 /* Helper */,
 				107CA8B024A05EFC00BA4D6B /* Mock */,
 				107CA8AD24A05C9700BA4D6B /* DI */,
@@ -267,31 +222,8 @@
 		107CA8A324A0515700BA4D6B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				10D8024024A144720021BE5A /* AllAwarding.swift */,
-				10D8023924A144710021BE5A /* Child.swift */,
-				10D8023724A144710021BE5A /* ChildData.swift */,
-				10D8023524A144710021BE5A /* Domain.swift */,
-				10D8023A24A144710021BE5A /* Edited.swift */,
-				10D8023824A144710021BE5A /* Feed.swift */,
-				10D8023F24A144720021BE5A /* FeedData.swift */,
-				10D8023324A144710021BE5A /* FlairTextColor.swift */,
-				10D8024324A144720021BE5A /* FlairType.swift */,
-				10D8023124A144710021BE5A /* Gildings.swift */,
-				10D8023B24A144720021BE5A /* Image.swift */,
-				10D8024424A144720021BE5A /* JSONSchemaSupport.swift */,
-				10D8024624A144720021BE5A /* Kind.swift */,
-				10D8023424A144710021BE5A /* MediaMetadata.swift */,
-				10D8023C24A144720021BE5A /* Preview.swift */,
-				10D8023624A144710021BE5A /* Prydssay0A651.swift */,
-				10D8023D24A144720021BE5A /* ResizedIcon.swift */,
-				10D8024224A144720021BE5A /* S.swift */,
-				10D8023E24A144720021BE5A /* Subreddit.swift */,
-				10D8024724A144720021BE5A /* SubredditID.swift */,
-				10D8023224A144710021BE5A /* SubredditNamePrefixed.swift */,
-				10D8024124A144720021BE5A /* SubredditType.swift */,
-				10D8024524A144720021BE5A /* The651.swift */,
-				10D8023024A144710021BE5A /* WhitelistStatus.swift */,
-				107CA8A424A0517200BA4D6B /* Restaurant.swift */,
+				1098591924A1B848003BECA7 /* Feed.swift */,
+				1098591B24A1B9CB003BECA7 /* Feed+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,7 +231,6 @@
 		107CA8A624A0528E00BA4D6B /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				107CA8A724A0529C00BA4D6B /* RestaurantService.swift */,
 				10D8026024A146CD0021BE5A /* NewsService.swift */,
 			);
 			path = Service;
@@ -344,6 +275,14 @@
 				1098591424A1998A003BECA7 /* NetworkLogger.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		1098591624A1A54A003BECA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1098591724A1A568003BECA7 /* NewsCellTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,43 +429,20 @@
 				10D8026324A148770021BE5A /* ServiceCodable.swift in Sources */,
 				100498FC24A14CE0008DBB2E /* MockNewsService.swift in Sources */,
 				10D8026124A146CD0021BE5A /* NewsService.swift in Sources */,
-				10D8025D24A144730021BE5A /* The651.swift in Sources */,
-				10D8024924A144730021BE5A /* Gildings.swift in Sources */,
-				10D8025324A144730021BE5A /* Image.swift in Sources */,
-				10D8024B24A144730021BE5A /* FlairTextColor.swift in Sources */,
-				10D8025724A144730021BE5A /* FeedData.swift in Sources */,
 				107CA89924A04AA800BA4D6B /* AppCoordinator.swift in Sources */,
 				107CA8B524A061A800BA4D6B /* UITestKey.swift in Sources */,
-				10D8025124A144730021BE5A /* Child.swift in Sources */,
-				10D8025A24A144730021BE5A /* S.swift in Sources */,
 				1098591524A1998A003BECA7 /* NetworkLogger.swift in Sources */,
 				107CA86724A03FA300BA4D6B /* ViewController.swift in Sources */,
-				10D8024E24A144730021BE5A /* Prydssay0A651.swift in Sources */,
 				107CA89E24A04EA300BA4D6B /* Storyboard+Extension.swift in Sources */,
-				107CA8A524A0517200BA4D6B /* Restaurant.swift in Sources */,
+				1098591A24A1B848003BECA7 /* Feed.swift in Sources */,
 				107CA8AB24A0574000BA4D6B /* NewsListViewModel.swift in Sources */,
-				107CA8A824A0529C00BA4D6B /* RestaurantService.swift in Sources */,
-				10D8025424A144730021BE5A /* Preview.swift in Sources */,
-				10D8025824A144730021BE5A /* AllAwarding.swift in Sources */,
-				10D8025024A144730021BE5A /* Feed.swift in Sources */,
 				107CA86324A03FA300BA4D6B /* AppDelegate.swift in Sources */,
-				10D8024824A144730021BE5A /* WhitelistStatus.swift in Sources */,
-				10D8024F24A144730021BE5A /* ChildData.swift in Sources */,
-				10D8024A24A144730021BE5A /* SubredditNamePrefixed.swift in Sources */,
-				10D8025924A144730021BE5A /* SubredditType.swift in Sources */,
 				107CA8AF24A05CA600BA4D6B /* ManagerInjector.swift in Sources */,
-				10D8024C24A144730021BE5A /* MediaMetadata.swift in Sources */,
+				1098591C24A1B9CB003BECA7 /* Feed+Extension.swift in Sources */,
 				107CA86524A03FA300BA4D6B /* SceneDelegate.swift in Sources */,
-				10D8025B24A144730021BE5A /* FlairType.swift in Sources */,
-				10D8025C24A144730021BE5A /* JSONSchemaSupport.swift in Sources */,
-				10D8025E24A144730021BE5A /* Kind.swift in Sources */,
-				10D8025224A144730021BE5A /* Edited.swift in Sources */,
-				10D8025524A144730021BE5A /* ResizedIcon.swift in Sources */,
 				107CA89C24A04CF900BA4D6B /* StoryboardIdentifiable.swift in Sources */,
-				10D8025624A144730021BE5A /* Subreddit.swift in Sources */,
-				10D8024D24A144730021BE5A /* Domain.swift in Sources */,
+				1098591824A1A568003BECA7 /* NewsCellTableViewCell.swift in Sources */,
 				1098591224A1994F003BECA7 /* Loggable.swift in Sources */,
-				10D8025F24A144730021BE5A /* SubredditID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -196,7 +196,7 @@ final class MockURLSessionDataTask: URLSessionDataTask {
     }
 
     private func handleInvalidJSON() {
-        struct InvalidObject: ServiceCodable {
+        struct InvalidObject: Codable {
 
             var property: String = ""
         }

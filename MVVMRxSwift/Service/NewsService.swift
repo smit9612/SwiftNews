@@ -11,31 +11,38 @@ import RxSwift
 
 protocol NewsServiceProtocol {
     
-    func fetchNews() -> Observable<[Child]>
+    func fetchNews() -> Observable<[Feed]>
 }
 
 final class NewsService: NewsServiceProtocol {
     
-    private let networkService = NetworkService()
     private let baseURLString = "https://www.reddit.com"
     
-    func fetchNews() -> Observable<[Child]> {
-        return networkService.execute(url: URL(string: baseURLString + "/r/swift/.json")!)
+    func fetchNews() -> Observable<[Feed]> {
+        return NetworkService.shared.execute(url: URL(string: baseURLString + "/r/swift/.json")!)
     }
 }
 
 
-final class NetworkService {
+final class NetworkService: ManagerInjected {
     
     var logger = NetworkLogger(logFileName: "Log.txt")
+    static let shared: NetworkService = NetworkService()
     
+    init() {
+        ManagerInjector.urlSession = ManagerInjector.createURLSession(delegate: nil)
+    }
+
+    func setURLSession(_ urlSession: URLSession? = nil) {
+        ManagerInjector.urlSession = urlSession ?? ManagerInjector.createURLSession()
+    }
     
     func execute <T:ServiceCodable>(url:URL) -> Observable<[T]> {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         urlRequest.allHTTPHeaderFields = ["Content-Type": "application/json"]
         return Observable.create { observer -> Disposable in
-            let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+            let task = ManagerInjector.urlSession.dataTask(with: urlRequest) { [weak self] (data, response, error) in
                 self?.logger.log(response: response as? HTTPURLResponse, data: data, error: error)
                 
                 guard let unwrappedData = data else {
@@ -43,11 +50,12 @@ final class NetworkService {
                     return
                 }
                 if let contentModel: T = T.from(data: unwrappedData) {
+                    print(contentModel)
                     observer.onNext([contentModel])
                 } else if let contentModels: [T] = T.arrayFrom(data: unwrappedData) {
                     observer.onNext(contentModels)
                 }
-                observer.onCompleted()
+                
             }
             task.resume()
             

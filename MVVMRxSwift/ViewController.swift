@@ -30,8 +30,9 @@ class ViewController: UIViewController {
     private func fetchResaurants() {
         
         viewModel.fetchNewListViewModel().observeOn(MainScheduler.instance).bind(to:
-        tableview.rx.items(cellIdentifier: "cell")) { index, viewModel, cell in
-            cell.textLabel?.text = viewModel.displayText
+        tableview.rx.items(cellIdentifier: "NewsCell", cellType: NewsCell.self)) { index, viewModel, cell in
+            print(viewModel.displayText)
+            cell.newsTitle.text = viewModel.displayText
         }.disposed(by: disposeBag)
     }
 }

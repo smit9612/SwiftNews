@@ -1,13 +1,57 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
 //
-//   let feed = try? newJSONDecoder().decode(Feed.self, from: jsonData)
+//  Feed.swift
+//  MVVMRxSwift
+//
+//  Created by smitesh patel on 2020-06-23.
+//  Copyright © 2020 Smitesh Patel. All rights reserved.
+//
 
 import Foundation
 
-// MARK: - Feed
 struct Feed: ServiceCodable {
     
-    var feedKind: Kind?
+    var kind: String?
     var data: FeedData?
 }
+
+struct FeedData: ServiceCodable {
+    
+    var modhash: String?
+    var dist: Int?
+    var children: [Child]?
+    var after: String?
+    var before: String?
+}
+
+struct Child: ServiceCodable {
+    
+    var kind: String?
+    var data: ChildData?
+}
+
+struct ChildData:ServiceCodable {
+    var selftext: String?
+    var authorFullName, Name: String?
+    var preview: Preview?
+    
+}
+
+struct Preview: ServiceCodable {
+    var images: [Image]?
+    var enabled: Bool?
+}
+
+// MARK: - Image
+struct Image: ServiceCodable {
+    var source: ResizedIcon?
+    var resolutions: [ResizedIcon]?
+    var id: String?
+}
+
+// MARK: - ResizedIcon
+struct ResizedIcon: ServiceCodable {
+    var url: String?
+    var width, height: Int?
+}
+
+
