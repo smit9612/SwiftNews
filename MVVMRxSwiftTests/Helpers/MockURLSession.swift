@@ -17,7 +17,6 @@ enum MockType {
     case nonJSON
     case downloadError
     case successWith(statusCode: Int)
-    case customResponse(responseFileName: String, statusCode: Int)
 
     var statusCode: Int {
         switch self {
@@ -29,8 +28,6 @@ enum MockType {
             return 0
         case .downloadError:
             return 503
-        case .customResponse(_, let statusCode):
-            return statusCode
         case .successWith(let statusCode):
             return statusCode
         }
@@ -50,8 +47,6 @@ enum MockType {
             return true
         case (.downloadError, .downloadError):
             return true
-        case (.customResponse(let lhsFileName), .customResponse(let rhsFileName)):
-            return lhsFileName == rhsFileName
         case (.successWith(let lhsStatusCode), .successWith(let rhsStatusCode)):
             return lhsStatusCode == rhsStatusCode
         default:
@@ -73,8 +68,6 @@ enum MockType {
             return false
         case (.downloadError, .downloadError):
             return false
-        case (.customResponse(let lhsFileName, let lhsStatusCode), .customResponse(let rhsFileName, let rhsStatusCode)):
-            return lhsFileName != rhsFileName || lhsStatusCode != rhsStatusCode
         case (.successWith(let lhsStatusCode), .successWith(let rhsStatusCode)):
             return lhsStatusCode == rhsStatusCode
         default:
@@ -182,8 +175,6 @@ final class MockURLSessionDataTask: URLSessionDataTask {
             handleStatusError()
         case .nonJSON:
             handleNonJSON()
-        case .customResponse(let responseFileName, _):
-            handleCustomResponse(fileName: responseFileName)
         }
     }
 
