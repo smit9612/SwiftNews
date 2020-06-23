@@ -40,7 +40,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tableviewController" destination="3G2-9E-Tot" id="PwJ-Ii-UzD"/>
+                        <outlet property="tableview" destination="3G2-9E-Tot" id="VQl-f2-50k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

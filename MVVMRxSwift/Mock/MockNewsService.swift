@@ -30,6 +30,5 @@ final class MockNewsService: NewsServiceProtocol {
                     }
                     return Disposables.create {}
                 }
-            
     }
 }

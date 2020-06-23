@@ -30,12 +30,14 @@ protocol ServiceCodable: Codable {
 extension ServiceCodable {
 
     public static func from<T>(data: Data) -> T? where T: ServiceCodable {
-        guard let decodedObj = try? JSONDecoder().decode(T.self, from: data) else {
+        do {
+            let decodedObj = try JSONDecoder().decode(T.self, from: data)
+            return decodedObj
+        } catch(let error) {
             print("Unable to decode \(T.self).")
+            print(error.localizedDescription)
             return nil
         }
-        
-        return decodedObj
     }
 
     public static func arrayFrom<T>(data: Data) -> [T]? where T: ServiceCodable {

@@ -16,28 +16,44 @@ protocol NewsServiceProtocol {
 
 final class NewsService: NewsServiceProtocol {
     
-    func fetchNews() -> Observable<[Child]> {
-                return Observable.create { observer -> Disposable in
-                    // If URL
-                    let task = URLSession.shared.dataTask(with: URL(string: "https://www.reddit.com/r/swift/.json")!) { data, _, _ in
-                        guard let data = data else {
-                            observer.onError(NSError(domain: "", code: -1, userInfo: nil))
-                            return
-                        }
+    private let networkService = NetworkService()
+    private let baseURLString = "https://www.reddit.com"
     
-                        guard let feed: Feed = Feed.from(data: data), let news: [Child] = feed.data?.children else {
-                            observer.onError(NSError(domain: "Error", code: -1, userInfo: nil))
-                            return
-                        }
-                        observer.onNext(news)
-                       
-                    }
-        
-                    task.resume()
-                    return Disposables.create {
-                        task.cancel()
-                    }
+    func fetchNews() -> Observable<[Child]> {
+        return networkService.execute(url: URL(string: baseURLString + "/r/swift/.json")!)
+    }
+}
+
+
+final class NetworkService {
+    
+    var logger = NetworkLogger(logFileName: "Log.txt")
+    
+    
+    func execute <T:ServiceCodable>(url:URL) -> Observable<[T]> {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        urlRequest.allHTTPHeaderFields = ["Content-Type": "application/json"]
+        return Observable.create { observer -> Disposable in
+            let task = URLSession.shared.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+                self?.logger.log(response: response as? HTTPURLResponse, data: data, error: error)
+                
+                guard let unwrappedData = data else {
+                    observer.onError(NSError(domain: "", code: -1, userInfo: nil))
+                    return
                 }
+                if let contentModel: T = T.from(data: unwrappedData) {
+                    observer.onNext([contentModel])
+                } else if let contentModels: [T] = T.arrayFrom(data: unwrappedData) {
+                    observer.onNext(contentModels)
+                }
+                observer.onCompleted()
+            }
+            task.resume()
             
+            return Disposables.create {
+                task.cancel()
+            }
+        }
     }
 }

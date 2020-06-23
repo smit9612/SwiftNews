@@ -7,6 +7,7 @@ import Foundation
 
 // MARK: - Feed
 struct Feed: ServiceCodable {
-    var kind: String?
+    
+    var feedKind: Kind?
     var data: FeedData?
 }
