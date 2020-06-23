@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100498FC24A14CE0008DBB2E /* MockNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100498FB24A14CE0008DBB2E /* MockNewsService.swift */; };
 		107CA86324A03FA300BA4D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA86224A03FA300BA4D6B /* AppDelegate.swift */; };
 		107CA86524A03FA300BA4D6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA86424A03FA300BA4D6B /* SceneDelegate.swift */; };
 		107CA86724A03FA300BA4D6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA86624A03FA300BA4D6B /* ViewController.swift */; };
@@ -15,6 +16,49 @@
 		107CA86F24A03FA400BA4D6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107CA86D24A03FA400BA4D6B /* LaunchScreen.storyboard */; };
 		107CA87A24A03FA500BA4D6B /* MVVMRxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA87924A03FA500BA4D6B /* MVVMRxSwiftTests.swift */; };
 		107CA88524A03FA500BA4D6B /* MVVMRxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA88424A03FA500BA4D6B /* MVVMRxSwiftUITests.swift */; };
+		107CA89424A04A0800BA4D6B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 107CA89324A04A0800BA4D6B /* RxSwift */; };
+		107CA89624A04A0800BA4D6B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 107CA89524A04A0800BA4D6B /* RxCocoa */; };
+		107CA89924A04AA800BA4D6B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA89824A04AA800BA4D6B /* AppCoordinator.swift */; };
+		107CA89C24A04CF900BA4D6B /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA89B24A04CF900BA4D6B /* StoryboardIdentifiable.swift */; };
+		107CA89E24A04EA300BA4D6B /* Storyboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA89D24A04EA300BA4D6B /* Storyboard+Extension.swift */; };
+		107CA8A224A050BB00BA4D6B /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 107CA8A124A050BB00BA4D6B /* restaurants.json */; };
+		107CA8A524A0517200BA4D6B /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8A424A0517200BA4D6B /* Restaurant.swift */; };
+		107CA8A824A0529C00BA4D6B /* RestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8A724A0529C00BA4D6B /* RestaurantService.swift */; };
+		107CA8AB24A0574000BA4D6B /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8AA24A0574000BA4D6B /* NewsListViewModel.swift */; };
+		107CA8AF24A05CA600BA4D6B /* ManagerInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8AE24A05CA600BA4D6B /* ManagerInjector.swift */; };
+		107CA8B224A05F1C00BA4D6B /* MockRestaurantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8B124A05F1C00BA4D6B /* MockRestaurantService.swift */; };
+		107CA8B524A061A800BA4D6B /* UITestKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8B324A0615F00BA4D6B /* UITestKey.swift */; };
+		107CA8B724A062A300BA4D6B /* mockRestaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = 107CA8B624A062A300BA4D6B /* mockRestaurants.json */; };
+		107CA8B924A067DA00BA4D6B /* RestaurantViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8B824A067DA00BA4D6B /* RestaurantViewModelTests.swift */; };
+		107CA8BC24A068FF00BA4D6B /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8BB24A068FF00BA4D6B /* MockURLSession.swift */; };
+		107CA8C124A06A0300BA4D6B /* MockResponses in Resources */ = {isa = PBXBuildFile; fileRef = 107CA8C024A06A0300BA4D6B /* MockResponses */; };
+		10D8020124A141000021BE5A /* mockswiftnews.json in Resources */ = {isa = PBXBuildFile; fileRef = 10D8020024A141000021BE5A /* mockswiftnews.json */; };
+		10D8024824A144730021BE5A /* WhitelistStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023024A144710021BE5A /* WhitelistStatus.swift */; };
+		10D8024924A144730021BE5A /* Gildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023124A144710021BE5A /* Gildings.swift */; };
+		10D8024A24A144730021BE5A /* SubredditNamePrefixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023224A144710021BE5A /* SubredditNamePrefixed.swift */; };
+		10D8024B24A144730021BE5A /* FlairTextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023324A144710021BE5A /* FlairTextColor.swift */; };
+		10D8024C24A144730021BE5A /* MediaMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023424A144710021BE5A /* MediaMetadata.swift */; };
+		10D8024D24A144730021BE5A /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023524A144710021BE5A /* Domain.swift */; };
+		10D8024E24A144730021BE5A /* Prydssay0A651.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023624A144710021BE5A /* Prydssay0A651.swift */; };
+		10D8024F24A144730021BE5A /* ChildData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023724A144710021BE5A /* ChildData.swift */; };
+		10D8025024A144730021BE5A /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023824A144710021BE5A /* Feed.swift */; };
+		10D8025124A144730021BE5A /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023924A144710021BE5A /* Child.swift */; };
+		10D8025224A144730021BE5A /* Edited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023A24A144710021BE5A /* Edited.swift */; };
+		10D8025324A144730021BE5A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023B24A144720021BE5A /* Image.swift */; };
+		10D8025424A144730021BE5A /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023C24A144720021BE5A /* Preview.swift */; };
+		10D8025524A144730021BE5A /* ResizedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023D24A144720021BE5A /* ResizedIcon.swift */; };
+		10D8025624A144730021BE5A /* Subreddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023E24A144720021BE5A /* Subreddit.swift */; };
+		10D8025724A144730021BE5A /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8023F24A144720021BE5A /* FeedData.swift */; };
+		10D8025824A144730021BE5A /* AllAwarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024024A144720021BE5A /* AllAwarding.swift */; };
+		10D8025924A144730021BE5A /* SubredditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024124A144720021BE5A /* SubredditType.swift */; };
+		10D8025A24A144730021BE5A /* S.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024224A144720021BE5A /* S.swift */; };
+		10D8025B24A144730021BE5A /* FlairType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024324A144720021BE5A /* FlairType.swift */; };
+		10D8025C24A144730021BE5A /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024424A144720021BE5A /* JSONSchemaSupport.swift */; };
+		10D8025D24A144730021BE5A /* The651.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024524A144720021BE5A /* The651.swift */; };
+		10D8025E24A144730021BE5A /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024624A144720021BE5A /* Kind.swift */; };
+		10D8025F24A144730021BE5A /* SubredditID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8024724A144720021BE5A /* SubredditID.swift */; };
+		10D8026124A146CD0021BE5A /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8026024A146CD0021BE5A /* NewsService.swift */; };
+		10D8026324A148770021BE5A /* ServiceCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D8026224A148770021BE5A /* ServiceCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100498FB24A14CE0008DBB2E /* MockNewsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNewsService.swift; sourceTree = "<group>"; };
 		107CA85F24A03FA300BA4D6B /* MVVMRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107CA86224A03FA300BA4D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		107CA86424A03FA300BA4D6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +94,47 @@
 		107CA88024A03FA500BA4D6B /* MVVMRxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMRxSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		107CA88424A03FA500BA4D6B /* MVVMRxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMRxSwiftUITests.swift; sourceTree = "<group>"; };
 		107CA88624A03FA500BA4D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107CA89824A04AA800BA4D6B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		107CA89B24A04CF900BA4D6B /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		107CA89D24A04EA300BA4D6B /* Storyboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extension.swift"; sourceTree = "<group>"; };
+		107CA8A124A050BB00BA4D6B /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
+		107CA8A424A0517200BA4D6B /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		107CA8A724A0529C00BA4D6B /* RestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantService.swift; sourceTree = "<group>"; };
+		107CA8AA24A0574000BA4D6B /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		107CA8AE24A05CA600BA4D6B /* ManagerInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerInjector.swift; sourceTree = "<group>"; };
+		107CA8B124A05F1C00BA4D6B /* MockRestaurantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRestaurantService.swift; sourceTree = "<group>"; };
+		107CA8B324A0615F00BA4D6B /* UITestKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestKey.swift; sourceTree = "<group>"; };
+		107CA8B624A062A300BA4D6B /* mockRestaurants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockRestaurants.json; sourceTree = "<group>"; };
+		107CA8B824A067DA00BA4D6B /* RestaurantViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModelTests.swift; sourceTree = "<group>"; };
+		107CA8BB24A068FF00BA4D6B /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		107CA8C024A06A0300BA4D6B /* MockResponses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MockResponses; sourceTree = "<group>"; };
+		10D8020024A141000021BE5A /* mockswiftnews.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mockswiftnews.json; sourceTree = "<group>"; };
+		10D8023024A144710021BE5A /* WhitelistStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhitelistStatus.swift; sourceTree = "<group>"; };
+		10D8023124A144710021BE5A /* Gildings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gildings.swift; sourceTree = "<group>"; };
+		10D8023224A144710021BE5A /* SubredditNamePrefixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditNamePrefixed.swift; sourceTree = "<group>"; };
+		10D8023324A144710021BE5A /* FlairTextColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlairTextColor.swift; sourceTree = "<group>"; };
+		10D8023424A144710021BE5A /* MediaMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaMetadata.swift; sourceTree = "<group>"; };
+		10D8023524A144710021BE5A /* Domain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
+		10D8023624A144710021BE5A /* Prydssay0A651.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prydssay0A651.swift; sourceTree = "<group>"; };
+		10D8023724A144710021BE5A /* ChildData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildData.swift; sourceTree = "<group>"; };
+		10D8023824A144710021BE5A /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		10D8023924A144710021BE5A /* Child.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		10D8023A24A144710021BE5A /* Edited.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edited.swift; sourceTree = "<group>"; };
+		10D8023B24A144720021BE5A /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		10D8023C24A144720021BE5A /* Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		10D8023D24A144720021BE5A /* ResizedIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizedIcon.swift; sourceTree = "<group>"; };
+		10D8023E24A144720021BE5A /* Subreddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subreddit.swift; sourceTree = "<group>"; };
+		10D8023F24A144720021BE5A /* FeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
+		10D8024024A144720021BE5A /* AllAwarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAwarding.swift; sourceTree = "<group>"; };
+		10D8024124A144720021BE5A /* SubredditType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditType.swift; sourceTree = "<group>"; };
+		10D8024224A144720021BE5A /* S.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S.swift; sourceTree = "<group>"; };
+		10D8024324A144720021BE5A /* FlairType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlairType.swift; sourceTree = "<group>"; };
+		10D8024424A144720021BE5A /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
+		10D8024524A144720021BE5A /* The651.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = The651.swift; sourceTree = "<group>"; };
+		10D8024624A144720021BE5A /* Kind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
+		10D8024724A144720021BE5A /* SubredditID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditID.swift; sourceTree = "<group>"; };
+		10D8026024A146CD0021BE5A /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		10D8026224A148770021BE5A /* ServiceCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107CA89624A04A0800BA4D6B /* RxCocoa in Frameworks */,
+				107CA89424A04A0800BA4D6B /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +187,15 @@
 		107CA86124A03FA300BA4D6B /* MVVMRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				107CA8B024A05EFC00BA4D6B /* Mock */,
+				107CA8AD24A05C9700BA4D6B /* DI */,
+				107CA8A924A0573200BA4D6B /* ViewModel */,
+				107CA8A624A0528E00BA4D6B /* Service */,
+				107CA8A324A0515700BA4D6B /* Model */,
+				107CA8A024A0509800BA4D6B /* Data */,
+				107CA89F24A04EA700BA4D6B /* Extensions */,
+				107CA89A24A04CE400BA4D6B /* Protocol */,
+				107CA89724A04A9100BA4D6B /* Coordinator */,
 				107CA86224A03FA300BA4D6B /* AppDelegate.swift */,
 				107CA86424A03FA300BA4D6B /* SceneDelegate.swift */,
 				107CA86624A03FA300BA4D6B /* ViewController.swift */,
@@ -113,8 +210,11 @@
 		107CA87824A03FA500BA4D6B /* MVVMRxSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				107CA8C024A06A0300BA4D6B /* MockResponses */,
+				107CA8BA24A068F200BA4D6B /* Helpers */,
 				107CA87924A03FA500BA4D6B /* MVVMRxSwiftTests.swift */,
 				107CA87B24A03FA500BA4D6B /* Info.plist */,
+				107CA8B824A067DA00BA4D6B /* RestaurantViewModelTests.swift */,
 			);
 			path = MVVMRxSwiftTests;
 			sourceTree = "<group>";
@@ -126,6 +226,116 @@
 				107CA88624A03FA500BA4D6B /* Info.plist */,
 			);
 			path = MVVMRxSwiftUITests;
+			sourceTree = "<group>";
+		};
+		107CA89724A04A9100BA4D6B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				107CA89824A04AA800BA4D6B /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		107CA89A24A04CE400BA4D6B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				107CA89B24A04CF900BA4D6B /* StoryboardIdentifiable.swift */,
+				10D8026224A148770021BE5A /* ServiceCodable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		107CA89F24A04EA700BA4D6B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				107CA89D24A04EA300BA4D6B /* Storyboard+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		107CA8A024A0509800BA4D6B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				107CA8B624A062A300BA4D6B /* mockRestaurants.json */,
+				107CA8A124A050BB00BA4D6B /* restaurants.json */,
+				10D8020024A141000021BE5A /* mockswiftnews.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		107CA8A324A0515700BA4D6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10D8024024A144720021BE5A /* AllAwarding.swift */,
+				10D8023924A144710021BE5A /* Child.swift */,
+				10D8023724A144710021BE5A /* ChildData.swift */,
+				10D8023524A144710021BE5A /* Domain.swift */,
+				10D8023A24A144710021BE5A /* Edited.swift */,
+				10D8023824A144710021BE5A /* Feed.swift */,
+				10D8023F24A144720021BE5A /* FeedData.swift */,
+				10D8023324A144710021BE5A /* FlairTextColor.swift */,
+				10D8024324A144720021BE5A /* FlairType.swift */,
+				10D8023124A144710021BE5A /* Gildings.swift */,
+				10D8023B24A144720021BE5A /* Image.swift */,
+				10D8024424A144720021BE5A /* JSONSchemaSupport.swift */,
+				10D8024624A144720021BE5A /* Kind.swift */,
+				10D8023424A144710021BE5A /* MediaMetadata.swift */,
+				10D8023C24A144720021BE5A /* Preview.swift */,
+				10D8023624A144710021BE5A /* Prydssay0A651.swift */,
+				10D8023D24A144720021BE5A /* ResizedIcon.swift */,
+				10D8024224A144720021BE5A /* S.swift */,
+				10D8023E24A144720021BE5A /* Subreddit.swift */,
+				10D8024724A144720021BE5A /* SubredditID.swift */,
+				10D8023224A144710021BE5A /* SubredditNamePrefixed.swift */,
+				10D8024124A144720021BE5A /* SubredditType.swift */,
+				10D8024524A144720021BE5A /* The651.swift */,
+				10D8023024A144710021BE5A /* WhitelistStatus.swift */,
+				107CA8A424A0517200BA4D6B /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		107CA8A624A0528E00BA4D6B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				107CA8A724A0529C00BA4D6B /* RestaurantService.swift */,
+				10D8026024A146CD0021BE5A /* NewsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		107CA8A924A0573200BA4D6B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				107CA8AA24A0574000BA4D6B /* NewsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		107CA8AD24A05C9700BA4D6B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				107CA8AE24A05CA600BA4D6B /* ManagerInjector.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		107CA8B024A05EFC00BA4D6B /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				107CA8B124A05F1C00BA4D6B /* MockRestaurantService.swift */,
+				100498FB24A14CE0008DBB2E /* MockNewsService.swift */,
+				107CA8B324A0615F00BA4D6B /* UITestKey.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		107CA8BA24A068F200BA4D6B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				107CA8BB24A068FF00BA4D6B /* MockURLSession.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +354,10 @@
 			dependencies = (
 			);
 			name = MVVMRxSwift;
+			packageProductDependencies = (
+				107CA89324A04A0800BA4D6B /* RxSwift */,
+				107CA89524A04A0800BA4D6B /* RxCocoa */,
+			);
 			productName = MVVMRxSwift;
 			productReference = 107CA85F24A03FA300BA4D6B /* MVVMRxSwift.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +430,9 @@
 				Base,
 			);
 			mainGroup = 107CA85624A03FA300BA4D6B;
+			packageReferences = (
+				107CA89224A04A0800BA4D6B /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 107CA86024A03FA300BA4D6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +449,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107CA8A224A050BB00BA4D6B /* restaurants.json in Resources */,
 				107CA86F24A03FA400BA4D6B /* LaunchScreen.storyboard in Resources */,
 				107CA86C24A03FA400BA4D6B /* Assets.xcassets in Resources */,
+				107CA8B724A062A300BA4D6B /* mockRestaurants.json in Resources */,
+				10D8020124A141000021BE5A /* mockswiftnews.json in Resources */,
 				107CA86A24A03FA300BA4D6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +462,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107CA8C124A06A0300BA4D6B /* MockResponses in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +480,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D8026324A148770021BE5A /* ServiceCodable.swift in Sources */,
+				100498FC24A14CE0008DBB2E /* MockNewsService.swift in Sources */,
+				10D8026124A146CD0021BE5A /* NewsService.swift in Sources */,
+				10D8025D24A144730021BE5A /* The651.swift in Sources */,
+				10D8024924A144730021BE5A /* Gildings.swift in Sources */,
+				10D8025324A144730021BE5A /* Image.swift in Sources */,
+				10D8024B24A144730021BE5A /* FlairTextColor.swift in Sources */,
+				10D8025724A144730021BE5A /* FeedData.swift in Sources */,
+				107CA89924A04AA800BA4D6B /* AppCoordinator.swift in Sources */,
+				107CA8B524A061A800BA4D6B /* UITestKey.swift in Sources */,
+				10D8025124A144730021BE5A /* Child.swift in Sources */,
+				10D8025A24A144730021BE5A /* S.swift in Sources */,
 				107CA86724A03FA300BA4D6B /* ViewController.swift in Sources */,
+				10D8024E24A144730021BE5A /* Prydssay0A651.swift in Sources */,
+				107CA89E24A04EA300BA4D6B /* Storyboard+Extension.swift in Sources */,
+				107CA8A524A0517200BA4D6B /* Restaurant.swift in Sources */,
+				107CA8AB24A0574000BA4D6B /* NewsListViewModel.swift in Sources */,
+				107CA8A824A0529C00BA4D6B /* RestaurantService.swift in Sources */,
+				10D8025424A144730021BE5A /* Preview.swift in Sources */,
+				10D8025824A144730021BE5A /* AllAwarding.swift in Sources */,
+				10D8025024A144730021BE5A /* Feed.swift in Sources */,
 				107CA86324A03FA300BA4D6B /* AppDelegate.swift in Sources */,
+				10D8024824A144730021BE5A /* WhitelistStatus.swift in Sources */,
+				10D8024F24A144730021BE5A /* ChildData.swift in Sources */,
+				10D8024A24A144730021BE5A /* SubredditNamePrefixed.swift in Sources */,
+				10D8025924A144730021BE5A /* SubredditType.swift in Sources */,
+				107CA8AF24A05CA600BA4D6B /* ManagerInjector.swift in Sources */,
+				10D8024C24A144730021BE5A /* MediaMetadata.swift in Sources */,
+				107CA8B224A05F1C00BA4D6B /* MockRestaurantService.swift in Sources */,
 				107CA86524A03FA300BA4D6B /* SceneDelegate.swift in Sources */,
+				10D8025B24A144730021BE5A /* FlairType.swift in Sources */,
+				10D8025C24A144730021BE5A /* JSONSchemaSupport.swift in Sources */,
+				10D8025E24A144730021BE5A /* Kind.swift in Sources */,
+				10D8025224A144730021BE5A /* Edited.swift in Sources */,
+				10D8025524A144730021BE5A /* ResizedIcon.swift in Sources */,
+				107CA89C24A04CF900BA4D6B /* StoryboardIdentifiable.swift in Sources */,
+				10D8025624A144730021BE5A /* Subreddit.swift in Sources */,
+				10D8024D24A144730021BE5A /* Domain.swift in Sources */,
+				10D8025F24A144730021BE5A /* SubredditID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +526,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107CA8BC24A068FF00BA4D6B /* MockURLSession.swift in Sources */,
 				107CA87A24A03FA500BA4D6B /* MVVMRxSwiftTests.swift in Sources */,
+				107CA8B924A067DA00BA4D6B /* RestaurantViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +696,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89MG4BKFF3;
 				INFOPLIST_FILE = MVVMRxSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +715,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89MG4BKFF3;
 				INFOPLIST_FILE = MVVMRxSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,6 +851,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		107CA89224A04A0800BA4D6B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		107CA89324A04A0800BA4D6B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 107CA89224A04A0800BA4D6B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		107CA89524A04A0800BA4D6B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 107CA89224A04A0800BA4D6B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 107CA85724A03FA300BA4D6B /* Project object */;
 }

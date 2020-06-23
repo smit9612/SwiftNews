@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Mock Rest1",
+        "cuisine": "european"
+    },
+    {
+        "name": "Mock Rest2",
+        "cuisine": "european"
+    },
+    {
+        "name": "Mock Rest3",
+        "cuisine": "indian"
+    },
+    {
+        "name": "Mock Rest4",
+        "cuisine": "indian"
+    },
+    {
+        "name": "Mock Rest5",
+        "cuisine": "french"
+    },
+    {
+        "name": "Mock Rest6",
+        "cuisine": "english"
+    },
+    {
+        "name": "Mock Rest7",
+        "cuisine": "mexican"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Blue Legume",
+        "cuisine": "european"
+    },
+    {
+        "name": "Fig & Olive",
+        "cuisine": "european"
+    },
+    {
+        "name": "Maharaja",
+        "cuisine": "indian"
+    },
+    {
+        "name": "Badmaash",
+        "cuisine": "indian"
+    },
+    {
+        "name": "The Grand Brasserie",
+        "cuisine": "french"
+    },
+    {
+        "name": "The islington",
+        "cuisine": "english"
+    },
+    {
+        "name": "Amigos ",
+        "cuisine": "mexican"
+    }
+]
