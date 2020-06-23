@@ -6,13 +6,13 @@
 //  Copyright © 2020 Smitesh Patel. All rights reserved.
 //
 
-import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
+import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var tableview: UITableView!
+
+    @IBOutlet var tableview: UITableView!
     let disposeBag = DisposeBag()
     var viewModel: NewsListViewModel!
 
@@ -26,19 +26,19 @@ class ViewController: UIViewController {
         fetchResaurants()
     }
 
-    
     private func fetchResaurants() {
-        
         viewModel.fetchNewListViewModel().observeOn(MainScheduler.instance).bind(to:
-        tableview.rx.items(cellIdentifier: "NewsCell", cellType: NewsCell.self)) { index, viewModel, cell in
+            tableview.rx.items(cellIdentifier: "NewsCell", cellType: NewsCell.self)) { _, viewModel, cell in
             print(viewModel.displayText)
             cell.newsTitle.text = viewModel.displayText
             // show loading
-            if let thumb = viewModel.imageURL  {
+            if let thumb = viewModel.imageURL {
                 cell.heroImage?.loadImage(url: URL(string: thumb)!)
             }
-            
         }.disposed(by: disposeBag)
+
+        tableview.rx.modelSelected(NewsViewModel.self).subscribe(onNext: { item in
+            print("SelectedItem: \(item.displayText)")
+        }).disposed(by: disposeBag)
     }
 }
-
