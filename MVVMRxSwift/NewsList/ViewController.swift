@@ -45,8 +45,6 @@ class ViewController: UIViewController {
 
     func showDetailsView(with news: NewsViewModel) {
         let detailsViewController: NewsDetailsViewController = UIStoryboard(storyboard: .main).instatiateViewController()
-
-        // set view model
         detailsViewController.viewModel = NewsDetailsViewModel(newsViewModel: news)
         navigationController?.pushViewController(detailsViewController, animated: true)
     }

@@ -18,6 +18,8 @@ final class NewsListViewModel: ManagerInjected {
     private let coordinator: NewsListCoordinatorProtocol
 
     let didSelectNews = PublishRelay<NewsViewModel>()
+    var imageRetrievedSuccess: PublishRelay<(UIImage, Int)> = PublishRelay<(UIImage, Int)>()
+
     init(coordinator: NewsListCoordinatorProtocol) {
         self.coordinator = coordinator
         bindOnDidChooseNews()
@@ -26,12 +28,14 @@ final class NewsListViewModel: ManagerInjected {
     func fetchNewListViewModel() -> Observable<[NewsViewModel]> {
         
         let flatMappedFeeds = newsService.fetchNews()
-            .map { feeds in feeds.compactMap { return FeedViewModel(feed: $0) } }
-        let newsViewModels = flatMappedFeeds.map { $0.map { $0.news } }
-        let news = newsViewModels.map { $0.flatMap { $0 } }.map { $0.filter { !$0.title.isEmpty } }
-
-        return news
+            .map { feeds in
+                feeds.compactMap {
+                    return FeedViewModel(feed: $0)
+                }
+            }.map { $0.map { $0.news } }.map { $0.flatMap { $0 } }.map { $0.filter { !$0.title.isEmpty } }
+        return flatMappedFeeds
     }
+    
     
     private func bindOnDidChooseNews() {
         didSelectNews
@@ -40,6 +44,7 @@ final class NewsListViewModel: ManagerInjected {
             })
             .disposed(by: disposeBag)
     }
+
 }
 
 struct FeedViewModel {
@@ -95,11 +100,4 @@ struct NewsViewModel {
     }
 }
 
-extension UIImageView: ManagerInjected {
-    
-    func loadImage(url: URL) {
-        let _ = imageLoader.loadImage(url: url).map { [weak self] in
-            self?.image = $0
-        }
-    }
-}
+

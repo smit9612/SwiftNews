@@ -27,7 +27,7 @@ final class NetworkService: ManagerInjected {
         ManagerInjector.urlSession = urlSession ?? ManagerInjector.createURLSession()
     }
     
-    func executeBinaryRequest(url: URL, cache: ImageCaching? = NetworkService.shared.imageCache) -> Observable<UIImage?> {
+    func requestImage(url: URL, cache: ImageCaching? = NetworkService.shared.imageCache) -> Observable<UIImage?> {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         return Observable.create { observer -> Disposable in

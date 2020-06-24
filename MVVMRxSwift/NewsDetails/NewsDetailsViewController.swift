@@ -8,7 +8,6 @@
 
 import UIKit
 import RxSwift
-
 import Nuke
 
 class NewsDetailsViewController: UIViewController {
@@ -23,6 +22,7 @@ class NewsDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        
         //title = viewModel.title
 //        textLabel.text = viewModel.displayText
 //        textLabel.sizeToFit()
@@ -43,16 +43,29 @@ class NewsDetailsViewController: UIViewController {
        }
 
        func bindViewModel() {
-        viewModel.title
-        .drive(self.rx.title)
-        .disposed(by: disposeBag)
         
+        viewModel.title
+                   .observeOn(MainScheduler.instance)
+                   .bind(to: self.rx.title)
+                   .disposed(by: disposeBag)
+  
         viewModel.displaytext
-               .drive(textLabel.rx.text)
-               .disposed(by: disposeBag)
-       }
+            .observeOn(MainScheduler.instance)
+            .bind(to: textLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.loadImage()
+            .observeOn(MainScheduler.instance)
+            .do(onNext: { [weak self] _ in
+                self?.detailImage.alpha = 0
+                UIView.animate(withDuration: 0.25) {
+                    self?.detailImage.alpha = 1.0
+                }
+            })
+            .bind(to: detailImage.rx.image)
+            .disposed(by: disposeBag)
+        }
     
-
     /*
     // MARK: - Navigation
 

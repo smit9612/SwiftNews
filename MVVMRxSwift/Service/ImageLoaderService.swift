@@ -36,9 +36,9 @@ protocol ImageLoaderProtocol {
     func loadImage(url: URL) -> Observable<UIImage?>
 }
 
-final class ImageLoader: ImageLoaderProtocol, ManagerInjected {
+final class ImageLoaderService: ImageLoaderProtocol, ManagerInjected {
     
     func loadImage(url: URL) -> Observable<UIImage?> {
-        NetworkService.shared.executeBinaryRequest(url: url)
+        NetworkService.shared.requestImage(url: url)
     }
 }

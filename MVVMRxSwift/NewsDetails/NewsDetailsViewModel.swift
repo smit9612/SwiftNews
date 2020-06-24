@@ -10,20 +10,25 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxNuke
+import Nuke
 
-struct NewsDetailsViewModel {
-    let title: Driver<String>
-    let displaytext: Driver<String>
-    //let image: Driver<String>
+final class NewsDetailsViewModel: ManagerInjected {
+    let title: Observable<String>
+    let displaytext: Observable<String>
     let newsViewModel: NewsViewModel
     
     init(newsViewModel: NewsViewModel) {
         self.newsViewModel = newsViewModel
-        self.title = Observable.just(newsViewModel.title).asDriver(onErrorJustReturn: "Error")
-        self.displaytext = Observable.just(newsViewModel.displayText).asDriver(onErrorJustReturn: "Error")
-        
-//        self.body = Observable.just(post.body).asDriver(onErrorJustReturn: "Error")
+        self.title = Observable.just(newsViewModel.title)
+        self.displaytext = Observable.just(newsViewModel.displayText)
     }
     
-    
+    func loadImage() -> Observable<UIImage?>{
+        if let url = newsViewModel.imageURL {
+            return imageLoaderService.loadImage(url: url)
+        } else {
+            return Observable.just(UIImage())
+        }
+    }
+
 }
