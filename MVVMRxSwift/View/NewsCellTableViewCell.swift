@@ -24,9 +24,6 @@ class NewsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
-
 }
 
 extension UIImage {

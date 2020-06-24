@@ -22,18 +22,6 @@ class NewsDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
-        //title = viewModel.title
-//        textLabel.text = viewModel.displayText
-//        textLabel.sizeToFit()
-//        if let imageURL = viewModel.imageURL {
-//            imageContainerView.isHidden = false
-//            Nuke.loadImage(with: imageURL, into: detailImage)
-//
-//        } else {
-//            imageContainerView.isHidden = true
-//        }
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - View Methods
@@ -43,7 +31,6 @@ class NewsDetailsViewController: UIViewController {
        }
 
        func bindViewModel() {
-        
         viewModel.title
                    .observeOn(MainScheduler.instance)
                    .bind(to: self.rx.title)

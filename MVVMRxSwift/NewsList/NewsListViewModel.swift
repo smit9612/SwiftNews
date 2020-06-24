@@ -25,6 +25,10 @@ final class NewsListViewModel: ManagerInjected {
         bindOnDidChooseNews()
     }
     
+    func loadImageURL(withURL url: String) {
+        
+    }
+    
     func fetchNewListViewModel() -> Observable<[NewsViewModel]> {
         let flatMappedFeeds = newsService.fetchNews()
             .map { feeds in
@@ -98,5 +102,3 @@ struct NewsViewModel {
         return ["self", "default"]
     }
 }
-
-

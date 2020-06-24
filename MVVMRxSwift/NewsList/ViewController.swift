@@ -7,7 +7,6 @@
 //
 
 import Nuke
-import RxCocoa
 import RxSwift
 import UIKit
 
@@ -31,21 +30,14 @@ class ViewController: UIViewController {
         viewModel.fetchNewListViewModel().observeOn(MainScheduler.instance).bind(to:
             tableview.rx.items(cellIdentifier: "NewsCell", cellType: NewsCell.self)) { _, viewModel, cell in
             cell.newsTitle.text = viewModel.title
-            // show loading
+        
             if let thumb = viewModel.imageURL {
                 Nuke.loadImage(with: thumb, into: cell.heroImage)
             }
-
         }.disposed(by: disposeBag)
-
+        
         tableview.rx.modelSelected(NewsViewModel.self)
             .bind(to: viewModel.didSelectNews)
             .disposed(by: disposeBag)
-    }
-
-    func showDetailsView(with news: NewsViewModel) {
-        let detailsViewController: NewsDetailsViewController = UIStoryboard(storyboard: .main).instatiateViewController()
-        detailsViewController.viewModel = NewsDetailsViewModel(newsViewModel: news)
-        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
