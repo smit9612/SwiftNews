@@ -6,10 +6,10 @@
 //  Copyright © 2020 Smitesh Patel. All rights reserved.
 //
 
+import Nuke
 import RxCocoa
 import RxSwift
 import UIKit
-import Nuke
 
 class ViewController: UIViewController {
 
@@ -35,26 +35,19 @@ class ViewController: UIViewController {
             if let thumb = viewModel.imageURL {
                 Nuke.loadImage(with: thumb, into: cell.heroImage)
             }
-                
-           
-    }.disposed(by: disposeBag)
-        
 
-        tableview.rx.modelSelected(NewsViewModel.self).subscribe(onNext: { item in
-            self.showDetailsView(with: item)
-        }).disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
 
-//        tableview.rx.modelSelected(NewsViewModel.self)
-//            .bind(to: viewModel.selectedNews)
-//                   .disposed(by: disposeBag)
+        tableview.rx.modelSelected(NewsViewModel.self)
+            .bind(to: viewModel.didSelectNews)
+            .disposed(by: disposeBag)
     }
-    
+
     func showDetailsView(with news: NewsViewModel) {
         let detailsViewController: NewsDetailsViewController = UIStoryboard(storyboard: .main).instatiateViewController()
-        
+
         // set view model
         detailsViewController.viewModel = NewsDetailsViewModel(newsViewModel: news)
         navigationController?.pushViewController(detailsViewController, animated: true)
-
     }
 }

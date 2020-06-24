@@ -10,7 +10,19 @@ import Foundation
 import UIKit
 import RxSwift
 
-final class AppCoordinator: BaseCoordinator<Void> {
+protocol Coordinator: class {
+    func start()
+    func coordinate(to coordinator: Coordinator)
+}
+
+extension Coordinator {
+    func coordinate(to coordinator: Coordinator) {
+        coordinator.start()
+    }
+}
+
+
+final class AppCoordinator: Coordinator {
 
     var window: UIWindow
     var navigationController = UINavigationController()
@@ -19,7 +31,7 @@ final class AppCoordinator: BaseCoordinator<Void> {
         self.window = window
     }
     
-    override func start() -> Observable<Void> {
+    func start(){
         let newsListCoordinator = NewsListCoordinator(window: window)
         return coordinate(to: newsListCoordinator)
     }

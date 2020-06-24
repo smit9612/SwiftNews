@@ -47,11 +47,9 @@ class NewsDetailsViewController: UIViewController {
         .drive(self.rx.title)
         .disposed(by: disposeBag)
         
-        
         viewModel.displaytext
                .drive(textLabel.rx.text)
                .disposed(by: disposeBag)
-
        }
     
 

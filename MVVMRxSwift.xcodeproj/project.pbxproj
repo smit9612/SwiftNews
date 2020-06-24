@@ -32,7 +32,6 @@
 		107CA8B924A067DA00BA4D6B /* RestaurantViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8B824A067DA00BA4D6B /* RestaurantViewModelTests.swift */; };
 		107CA8BC24A068FF00BA4D6B /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107CA8BB24A068FF00BA4D6B /* MockURLSession.swift */; };
 		107CA8C124A06A0300BA4D6B /* MockResponses in Resources */ = {isa = PBXBuildFile; fileRef = 107CA8C024A06A0300BA4D6B /* MockResponses */; };
-		1090F3C324A31A9600D90984 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CA0E124A315FD007D25C1 /* BaseCoordinator.swift */; };
 		1090F3C624A31C6100D90984 /* RxNuke in Frameworks */ = {isa = PBXBuildFile; productRef = 1090F3C524A31C6100D90984 /* RxNuke */; };
 		1098591224A1994F003BECA7 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098591124A1994F003BECA7 /* Loggable.swift */; };
 		1098591524A1998A003BECA7 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098591424A1998A003BECA7 /* NetworkLogger.swift */; };
@@ -70,7 +69,6 @@
 		1054ADC724A2E4F500D3ED36 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		1054ADCB24A2E59900D3ED36 /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
 		1054ADCD24A2E9B200D3ED36 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		106CA0E124A315FD007D25C1 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		107CA85F24A03FA300BA4D6B /* MVVMRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107CA86224A03FA300BA4D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		107CA86424A03FA300BA4D6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 		107CA89724A04A9100BA4D6B /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				106CA0E124A315FD007D25C1 /* BaseCoordinator.swift */,
 				107CA89824A04AA800BA4D6B /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -469,7 +466,6 @@
 				1098591E24A1D722003BECA7 /* NetworkService.swift in Sources */,
 				107CA8B524A061A800BA4D6B /* UITestKey.swift in Sources */,
 				1098591524A1998A003BECA7 /* NetworkLogger.swift in Sources */,
-				1090F3C324A31A9600D90984 /* BaseCoordinator.swift in Sources */,
 				107CA86724A03FA300BA4D6B /* ViewController.swift in Sources */,
 				107CA89E24A04EA300BA4D6B /* Storyboard+Extension.swift in Sources */,
 				1098592024A1DE60003BECA7 /* ImageLoader.swift in Sources */,

@@ -14,26 +14,31 @@ import UIKit
 final class NewsListViewModel: ManagerInjected {
 
     let title = "Swift News"
-    let db = DisposeBag()
+    let disposeBag = DisposeBag()
+    private let coordinator: NewsListCoordinatorProtocol
 
-    let didSelectNews = PublishSubject<NewsViewModel>()
+    let didSelectNews = PublishRelay<NewsViewModel>()
+    init(coordinator: NewsListCoordinatorProtocol) {
+        self.coordinator = coordinator
+        bindOnDidChooseNews()
+    }
     
-    /// Call to open news details page.
-    var selectedNews: AnyObserver<NewsViewModel> = PublishSubject<NewsViewModel>().asObserver()
-    
-    /// Emits an url of repository page to be shown.
-    var showNews: Observable<NewsViewModel> = Observable.just(NewsViewModel(child: Child()))
-   
     func fetchNewListViewModel() -> Observable<[NewsViewModel]> {
         
         let flatMappedFeeds = newsService.fetchNews()
             .map { feeds in feeds.compactMap { return FeedViewModel(feed: $0) } }
         let newsViewModels = flatMappedFeeds.map { $0.map { $0.news } }
         let news = newsViewModels.map { $0.flatMap { $0 } }.map { $0.filter { !$0.title.isEmpty } }
-        
-        selectedNews = didSelectNews.asObserver()
-        showNews = didSelectNews.asObservable().map { $0 }
+
         return news
+    }
+    
+    private func bindOnDidChooseNews() {
+        didSelectNews
+            .subscribe(onNext: { [unowned self] (newsViewMoel) in
+                self.coordinator.showDetailsView(with: newsViewMoel)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

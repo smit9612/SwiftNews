@@ -9,7 +9,13 @@
 import UIKit
 import RxSwift
 
-final class NewsListCoordinator: BaseCoordinator<Void> {
+protocol NewsListCoordinatorProtocol: class {
+    
+    func showDetailsView(with news: NewsViewModel)
+}
+
+
+final class NewsListCoordinator: Coordinator {
     
     var window: UIWindow?
     var navigationController = UINavigationController()
@@ -17,19 +23,25 @@ final class NewsListCoordinator: BaseCoordinator<Void> {
         self.window = window
     }
     
-    override func start() -> Observable<Void> {
+    func start() {
         let viewController: ViewController = UIStoryboard(storyboard: .main).instatiateViewController()
-        let viewModel:NewsListViewModel = NewsListViewModel()
+        let viewModel:NewsListViewModel = NewsListViewModel(coordinator: self)
         viewController.viewModel = viewModel
-        // viewModel some observer to  which will call detailsview with child
-//        viewModel.showNews.debug().subscribe(onNext: { [weak self] in self?.showDetailsView(with: $0)
-//              }).disposed(by: disposeBag)
         navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        return Observable.never()
     }
+}
+
+extension NewsListCoordinator: NewsListCoordinatorProtocol {
     
+    func showDetailsView(with news: NewsViewModel) {
+        let detailsViewController: NewsDetailsViewController = UIStoryboard(storyboard: .main).instatiateViewController()
+        
+        // set view model
+        detailsViewController.viewModel = NewsDetailsViewModel(newsViewModel: news)
+        navigationController.pushViewController(detailsViewController, animated: true)
+    }
 }
 
 

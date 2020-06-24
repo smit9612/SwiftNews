@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxNuke
 
 struct NewsDetailsViewModel {
     let title: Driver<String>
@@ -20,6 +21,7 @@ struct NewsDetailsViewModel {
         self.newsViewModel = newsViewModel
         self.title = Observable.just(newsViewModel.title).asDriver(onErrorJustReturn: "Error")
         self.displaytext = Observable.just(newsViewModel.displayText).asDriver(onErrorJustReturn: "Error")
+        
 //        self.body = Observable.just(post.body).asDriver(onErrorJustReturn: "Error")
     }
     
