@@ -13,6 +13,7 @@ import RxNuke
 import Nuke
 
 final class NewsDetailsViewModel: ManagerInjected {
+    
     let title: Observable<String>
     let displaytext: Observable<String>
     let newsViewModel: NewsViewModel

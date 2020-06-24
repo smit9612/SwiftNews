@@ -26,7 +26,6 @@ final class NewsListViewModel: ManagerInjected {
     }
     
     func fetchNewListViewModel() -> Observable<[NewsViewModel]> {
-        
         let flatMappedFeeds = newsService.fetchNews()
             .map { feeds in
                 feeds.compactMap {
