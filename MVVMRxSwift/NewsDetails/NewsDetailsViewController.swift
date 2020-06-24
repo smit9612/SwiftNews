@@ -7,30 +7,52 @@
 //
 
 import UIKit
+import RxSwift
+
 import Nuke
 
 class NewsDetailsViewController: UIViewController {
     
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
-
     @IBOutlet weak var imageContainerView: UIView!
-    var newsViewModel: NewsViewModel!
+    
+    let disposeBag = DisposeBag()
+    var viewModel: NewsDetailsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = newsViewModel.title
-        textLabel.text = newsViewModel.displayText
-        textLabel.sizeToFit()
-        if let imageURL = newsViewModel.imageURL {
-            imageContainerView.isHidden = false
-            Nuke.loadImage(with: imageURL, into: detailImage)
-
-        } else {
-            imageContainerView.isHidden = true
-        }
+        setupView()
+        //title = viewModel.title
+//        textLabel.text = viewModel.displayText
+//        textLabel.sizeToFit()
+//        if let imageURL = viewModel.imageURL {
+//            imageContainerView.isHidden = false
+//            Nuke.loadImage(with: imageURL, into: detailImage)
+//
+//        } else {
+//            imageContainerView.isHidden = true
+//        }
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - View Methods
+
+       private func setupView() {
+           bindViewModel()
+       }
+
+       func bindViewModel() {
+        viewModel.title
+        .drive(self.rx.title)
+        .disposed(by: disposeBag)
+        
+        
+        viewModel.displaytext
+               .drive(textLabel.rx.text)
+               .disposed(by: disposeBag)
+
+       }
     
 
     /*

@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         let detailsViewController: NewsDetailsViewController = UIStoryboard(storyboard: .main).instatiateViewController()
         
         // set view model
-        detailsViewController.newsViewModel = news
+        detailsViewController.viewModel = NewsDetailsViewModel(newsViewModel: news)
         navigationController?.pushViewController(detailsViewController, animated: true)
 
     }
