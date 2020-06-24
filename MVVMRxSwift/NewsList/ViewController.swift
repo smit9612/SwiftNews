@@ -21,12 +21,12 @@ class ViewController: UIViewController {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         tableview.contentInsetAdjustmentBehavior = .never
-        // Do any additional setup after loading the view.
         tableview.tableFooterView = UIView()
-        fetchResaurants()
+
+        setupBindings()
     }
 
-    private func fetchResaurants() {
+    private func setupBindings() {
         viewModel.fetchNewListViewModel().observeOn(MainScheduler.instance).bind(to:
             tableview.rx.items(cellIdentifier: "NewsCell", cellType: NewsCell.self)) { _, viewModel, cell in
             print(viewModel.displayText)
@@ -36,9 +36,22 @@ class ViewController: UIViewController {
                 cell.heroImage?.loadImage(url: URL(string: thumb)!)
             }
         }.disposed(by: disposeBag)
+        
 
         tableview.rx.modelSelected(NewsViewModel.self).subscribe(onNext: { item in
-            print("SelectedItem: \(item.displayText)")
+            self.showDetailsView(with: item)
         }).disposed(by: disposeBag)
+
+//        tableview.rx.modelSelected(NewsViewModel.self)
+//            .bind(to: viewModel.selectedNews)
+//                   .disposed(by: disposeBag)
+    }
+    
+    func showDetailsView(with news: NewsViewModel) {
+        let detailsViewController: NewsDetailsViewController = UIStoryboard(storyboard: .main).instatiateViewController()
+        
+        // set view model
+        navigationController?.pushViewController(detailsViewController, animated: true)
+
     }
 }

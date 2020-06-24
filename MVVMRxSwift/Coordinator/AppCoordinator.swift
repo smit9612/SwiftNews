@@ -8,31 +8,19 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
+final class AppCoordinator: BaseCoordinator<Void> {
 
-protocol Coordinator {
-    
-    var navigationController: UINavigationController { get set }
-    func start()
-}
-
-
-final class AppCoordinator: Coordinator {
-
-    var window: UIWindow?
+    var window: UIWindow
     var navigationController = UINavigationController()
     
     init(window: UIWindow) {
         self.window = window
     }
     
-    func start() {
-        
-        let viewController: ViewController = UIStoryboard(storyboard: .main).instatiateViewController()
-        viewController.viewModel = NewsListViewModel()
-        navigationController = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+    override func start() -> Observable<Void> {
+        let newsListCoordinator = NewsListCoordinator(window: window)
+        return coordinate(to: newsListCoordinator)
     }
-    
 }

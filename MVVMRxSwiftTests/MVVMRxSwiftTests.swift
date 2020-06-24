@@ -7,6 +7,9 @@
 //
 
 import XCTest
+
+import RxSwift
+
 @testable import MVVMRxSwift
 
 class MVVMRxSwiftTests: XCTestCase {

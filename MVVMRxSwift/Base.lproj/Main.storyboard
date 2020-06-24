@@ -72,5 +72,63 @@
             </objects>
             <point key="canvasLocation" x="-272.46376811594206" y="87.723214285714278"/>
         </scene>
+        <!--News Details View Controller-->
+        <scene sceneID="l5U-12-DGq">
+            <objects>
+                <viewController storyboardIdentifier="NewsDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vzh-es-NM4" customClass="NewsDetailsViewController" customModule="MVVMRxSwift" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R94-Fi-ajt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Psn-qn-w2C">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-T6-cA8">
+                                        <rect key="frame" x="20" y="20" width="365" height="478.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jsd-uC-9cH">
+                                                <rect key="frame" x="0.0" y="0.0" width="365" height="438"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-dg-1tq">
+                                                <rect key="frame" x="0.0" y="458" width="365" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="a2b-T6-cA8" firstAttribute="trailing" secondItem="xfw-OD-Occ" secondAttribute="trailing" constant="385" id="D8c-ya-LFd"/>
+                                    <constraint firstItem="a2b-T6-cA8" firstAttribute="width" secondItem="UW8-4F-3C5" secondAttribute="width" multiplier="0.881643" id="EQb-b2-fyd"/>
+                                    <constraint firstItem="a2b-T6-cA8" firstAttribute="bottom" secondItem="xfw-OD-Occ" secondAttribute="bottom" constant="498.5" id="gSI-ig-wsr"/>
+                                    <constraint firstItem="a2b-T6-cA8" firstAttribute="top" secondItem="xfw-OD-Occ" secondAttribute="top" constant="20" id="qcL-Ov-VZU"/>
+                                    <constraint firstItem="a2b-T6-cA8" firstAttribute="leading" secondItem="xfw-OD-Occ" secondAttribute="leading" constant="20" id="rfe-pb-Ng3"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="xfw-OD-Occ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="UW8-4F-3C5"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Psn-qn-w2C" secondAttribute="trailing" id="7Cs-F7-Ftw"/>
+                            <constraint firstItem="Psn-qn-w2C" firstAttribute="top" secondItem="R94-Fi-ajt" secondAttribute="top" id="C3u-2d-UxU"/>
+                            <constraint firstItem="Psn-qn-w2C" firstAttribute="leading" secondItem="R94-Fi-ajt" secondAttribute="leading" id="RuA-gm-eCh"/>
+                            <constraint firstAttribute="bottom" secondItem="Psn-qn-w2C" secondAttribute="bottom" id="nOw-qk-04F"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="detailImage" destination="jsd-uC-9cH" id="3Bt-ji-cwV"/>
+                            <outlet property="textLabel" destination="Psn-qn-w2C" id="3ci-10-0nY"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="detailImage" destination="jsd-uC-9cH" id="Dka-iV-xmg"/>
+                        <outlet property="textLabel" destination="mCn-dg-1tq" id="Heg-BL-94h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgm-9L-MpF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469.56521739130437" y="87.723214285714278"/>
+        </scene>
     </scenes>
 </document>
