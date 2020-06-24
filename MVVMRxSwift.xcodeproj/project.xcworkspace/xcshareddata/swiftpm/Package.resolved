@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "Nuke",
+        "repositoryURL": "https://github.com/kean/Nuke.git",
+        "state": {
+          "branch": null,
+          "revision": "998588c80611e4fe9b71dd4323fa938ee62f4ff7",
+          "version": "9.1.1"
+        }
+      },
+      {
+        "package": "RxNuke",
+        "repositoryURL": "https://github.com/kean/RxNuke",
+        "state": {
+          "branch": null,
+          "revision": "4c99559e11afa40c3246de75f9d2b6018203c47f",
+          "version": "1.0.1"
+        }
+      },
+      {
         "package": "RxSwift",
         "repositoryURL": "https://github.com/ReactiveX/RxSwift",
         "state": {

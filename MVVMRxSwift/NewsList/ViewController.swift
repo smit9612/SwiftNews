@@ -9,6 +9,7 @@
 import RxCocoa
 import RxSwift
 import UIKit
+import Nuke
 
 class ViewController: UIViewController {
 
@@ -29,13 +30,14 @@ class ViewController: UIViewController {
     private func setupBindings() {
         viewModel.fetchNewListViewModel().observeOn(MainScheduler.instance).bind(to:
             tableview.rx.items(cellIdentifier: "NewsCell", cellType: NewsCell.self)) { _, viewModel, cell in
-            print(viewModel.displayText)
-            cell.newsTitle.text = viewModel.displayText
+            cell.newsTitle.text = viewModel.title
             // show loading
             if let thumb = viewModel.imageURL {
-                cell.heroImage?.loadImage(url: URL(string: thumb)!)
+                Nuke.loadImage(with: thumb, into: cell.heroImage)
             }
-        }.disposed(by: disposeBag)
+                
+           
+    }.disposed(by: disposeBag)
         
 
         tableview.rx.modelSelected(NewsViewModel.self).subscribe(onNext: { item in
@@ -51,6 +53,7 @@ class ViewController: UIViewController {
         let detailsViewController: NewsDetailsViewController = UIStoryboard(storyboard: .main).instatiateViewController()
         
         // set view model
+        detailsViewController.newsViewModel = news
         navigationController?.pushViewController(detailsViewController, animated: true)
 
     }

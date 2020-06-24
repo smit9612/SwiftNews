@@ -42,10 +42,24 @@ struct Child: ServiceCodable {
 }
 
 struct ChildData: ServiceCodable {
+    var title: String?
     var selftext: String?
-    var authorFullName, Name: String?
+    var authorFullName, name: String?
     var thumbnail: String?
+    var thumbHeight: Double?
+    var thumbWidth:Double?
     var preview: Preview?
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case selftext
+        case authorFullName
+        case name = "Name"
+        case thumbnail
+        case thumbHeight = "thumbnail_height"
+        case thumbWidth = "thumbnail_width"
+        case preview
+    }
 }
 
 struct Preview: ServiceCodable {

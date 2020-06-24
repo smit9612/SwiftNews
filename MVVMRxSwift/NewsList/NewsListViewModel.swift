@@ -29,7 +29,7 @@ final class NewsListViewModel: ManagerInjected {
         let flatMappedFeeds = newsService.fetchNews()
             .map { feeds in feeds.compactMap { return FeedViewModel(feed: $0) } }
         let newsViewModels = flatMappedFeeds.map { $0.map { $0.news } }
-        let news = newsViewModels.map { $0.flatMap { $0 } }
+        let news = newsViewModels.map { $0.flatMap { $0 } }.map { $0.filter { !$0.title.isEmpty } }
         
         selectedNews = didSelectNews.asObserver()
         showNews = didSelectNews.asObservable().map { $0 }
@@ -54,18 +54,35 @@ struct NewsViewModel {
         self.child = child
     }
 
+    var title: String {
+        return child.childData?.title ?? ""
+    }
     // TODO Unit test for 
     var displayText: String {
         return child.childData?.selftext ?? ""
     }
     
-    // TODO Unit  test for imageURL
-    var imageURL: String? {
-        // here we can also check if thumb is valid URL check instead of return string.
-        guard let thumbnail = child.childData?.thumbnail, !notallowedURL.contains(thumbnail) else {
+    var thumbSize: CGSize {
+        guard let height = child.childData?.thumbHeight, let width = child.childData?.thumbWidth else {
+            return CGSize(width: 0, height: 0)
+        }
+        return CGSize(width: width, height: height)
+    }
+    
+    var sourceURL: URL? {
+        guard let sourceURl = child.childData?.preview?.images?.first?.source?.url, let imageURL = URL(string:sourceURl) else {
             return nil
         }
-        return thumbnail
+        return imageURL
+    }
+    
+    // TODO Unit  test for imageURL
+    var imageURL: URL? {
+        // here we can also check if thumb is valid URL check instead of return string.
+        guard let thumbnail = child.childData?.thumbnail, !notallowedURL.contains(thumbnail), let imageURL = URL(string:thumbnail) else {
+            return nil
+        }
+        return imageURL
     }
     
     private var notallowedURL: [String] {

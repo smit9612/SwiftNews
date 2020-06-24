@@ -7,18 +7,28 @@
 //
 
 import UIKit
+import Nuke
 
 class NewsDetailsViewController: UIViewController {
     
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
 
+    @IBOutlet weak var imageContainerView: UIView!
     var newsViewModel: NewsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = newsViewModel.title
         textLabel.text = newsViewModel.displayText
-        
+        textLabel.sizeToFit()
+        if let imageURL = newsViewModel.imageURL {
+            imageContainerView.isHidden = false
+            Nuke.loadImage(with: imageURL, into: detailImage)
+
+        } else {
+            imageContainerView.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
